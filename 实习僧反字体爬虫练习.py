@@ -11,6 +11,7 @@ def detail_url(url):
     title = soup.title.text[:-6]
     company_name = soup.select('.com_intro .com-name')[0].text
     city = soup.select('.job_msg .job_position')[0].text
+    # 字体编码破解
     salary = soup.select('.job_money.cutom_font')[0].text.encode('utf-8')
     salary = salary.replace(b'\xef\xa0\x8b', b'0')
     salary = salary.replace(b'\xef\x9b\x9e', b'1')

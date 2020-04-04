@@ -13,12 +13,12 @@ class NewsPipeline(object):
         self.exporter = CsvItemExporter(self.file, encoding='utf-8')  # 实例化CSV模块
         self.exporter.start_exporting()  # 开始导出
 
-    def close_spider(self, spider):
-        # 结束导出并关闭文件
-        self.exporter.finish_exporting()
-        self.file.close()
-
     def process_item(self, item, spider):
         # 导出进程
         self.exporter.export_item(item)
         return item
+
+    def close_spider(self, spider):
+        # 结束导出并关闭文件
+        self.exporter.finish_exporting()
+        self.file.close()
