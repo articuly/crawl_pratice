@@ -11,7 +11,7 @@ class News163Spider(CrawlSpider):
     start_urls = ['http://news.163.com/']
 
     rules = (
-        Rule(LinkExtractor(allow=r'https://news.163.com/20/0403/\d+/.*?html'), callback='parse_item', follow=True),
+        Rule(LinkExtractor(allow=r'https://news.163.com/20/0404/\d+/.*?html'), callback='parse_item', follow=True),
     )
 
     def parse_item(self, response):
