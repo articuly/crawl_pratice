@@ -132,3 +132,4 @@ dmypy.json
 
 /.idea/
 articuly/articuly_blog_data.csv
+.vscode/settings.json
